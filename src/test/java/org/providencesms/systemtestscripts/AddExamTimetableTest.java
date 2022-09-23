@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.tyss.providenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.SubTabNames;
+import org.tyss.providenceSMS.genericUtility.TabNames;
 
 public class AddExamTimetableTest extends BaseClass {
 
@@ -19,8 +20,8 @@ public class AddExamTimetableTest extends BaseClass {
 		
 		commonPage.loginAction(teacherUN, teacherPWD);
 		
-		teacherhomePage.clickExamTab(webdriver,driver);
-		teacherhomePage.clickExamTimetableSubTab(webdriver,driver);
+		commonPage.clickRequiredTab(webdriver,TabNames.EXAMTAB);
+		commonPage.clickRequiredSubTab(webdriver,SubTabNames.ExamTimetableTab);
 		
 		addExam.addExamTimetable(webdriver, excel);
 		addExam.clickNextButton();

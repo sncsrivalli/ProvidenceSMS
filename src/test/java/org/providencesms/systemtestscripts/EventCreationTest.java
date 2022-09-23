@@ -4,6 +4,8 @@ import org.openqa.selenium.ElementNotInteractableException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.tyss.providenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.SubTabNames;
+import org.tyss.providenceSMS.genericUtility.TabNames;
 
 public class EventCreationTest extends BaseClass{
 	@Test
@@ -14,8 +16,8 @@ public class EventCreationTest extends BaseClass{
 		String teacherPWD = property.getDataFromPropertyFile("Teacher_PWD1");
 		
 		commonPage.loginAction(teacherUN, teacherPWD);
-		teacherhomePage.clickEventsTab(webdriver, driver);
-		teacherhomePage.clickMyEventsSubTab(webdriver, driver);
+		commonPage.clickRequiredTab(webdriver, TabNames.EVENTTAB);
+		commonPage.clickRequiredSubTab(webdriver, SubTabNames.MyEventsTab);
 		
 		try {
 			

@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.testng.annotations.Test;
 import org.tyss.providenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.TabNames;
 
 public class PettyCashTest extends BaseClass{
 	
@@ -14,7 +15,7 @@ public class PettyCashTest extends BaseClass{
 		String teacherPWD = property.getDataFromPropertyFile("Teacher_PWD2");
 
 		commonPage.loginAction(teacherUN, teacherPWD);		
-		teacherhomePage.clickMyPettyCashTab(webdriver, driver);
+		commonPage.clickRequiredTab(webdriver, TabNames.MYPETTYCASHTAB);
 		
 		myPettyCash.clickAddButton();
 		
@@ -26,7 +27,7 @@ public class PettyCashTest extends BaseClass{
 		String adminPassword = property.getDataFromPropertyFile("Admin_PWD");
 
 		commonPage.loginAction(adminLogin, adminPassword);
-		adminhomePage.clickPettyCashTab(webdriver, driver);
+		commonPage.clickRequiredTab(webdriver, TabNames.PETTYCASHTAB);
 		
 		pettyCash.writeToSearchTextField(map);
 		pettyCash.approveAndValidatePettyCash(driver, map, excel);

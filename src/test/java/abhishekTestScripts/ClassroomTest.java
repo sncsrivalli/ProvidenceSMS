@@ -6,7 +6,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import org.tyss.ProvidenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.TabNames;
 
 public class ClassroomTest extends BaseClass {
 @Test
@@ -20,17 +21,17 @@ public class ClassroomTest extends BaseClass {
 		commonPage.loginAction(adminUN, adminPWD);
 
 		// Login Validation through welcome message
-		String message = webdriver.loginValidation();
+		//String message = webdriver.loginValidation();
 		// webdriver.verifyWebPage(message,"Welcome back!");
 		//Assert.assertEquals(message, "Welcome back!");
-		if (message.equals("Welcome back!")) {
-			System.out.println("Login is sucessfull..");
-		} else {
-			System.out.println("Login is failure..");
-		}
+//		if (message.equals("Welcome back!")) {
+//			System.out.println("Login is sucessfull..");
+//		} else {
+//			System.out.println("Login is failure..");
+//		}
 
 		// Click on ClassroomTab
-		adminHomePage.clickAdminTab1(webdriver, driver);
+		commonPage.clickRequiredTab(webdriver, TabNames.CLASSROOMTAB);
 
 		// get Data From excel with Key
 		Map<String, String> map = classroomPage.addClassroom(webdriver, excel);
@@ -60,6 +61,6 @@ public class ClassroomTest extends BaseClass {
 		classroomPage.deleteClassroomAction();
 
 		// Signout Script
-		commonPage.signoutAction();
+		commonPage.signOutAction();
 	}
 }

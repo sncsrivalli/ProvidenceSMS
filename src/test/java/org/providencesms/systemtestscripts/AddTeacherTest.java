@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.tyss.providenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.SubTabNames;
+import org.tyss.providenceSMS.genericUtility.TabNames;
 
 public class AddTeacherTest extends BaseClass{
 
@@ -19,8 +21,8 @@ public class AddTeacherTest extends BaseClass{
 		
 		commonPage.loginAction(adminLogin, adminPassword);
 		
-		adminhomePage.clickTeacherTab(webdriver,driver);
-		adminhomePage.clickAddTeacherSubTab(webdriver,driver);
+		commonPage.clickRequiredTab(webdriver,TabNames.TEACHERTAB);
+		commonPage.clickRequiredSubTab(webdriver,SubTabNames.AddTeacherTab);
 			
 		Map<String,String> map = addTeacherAction.addTeacher(webdriver,excel);
 
@@ -32,8 +34,8 @@ public class AddTeacherTest extends BaseClass{
 		String parentPWD = property.getDataFromPropertyFile("Parent_PWD1");
 		commonPage.loginAction(parentUN, parentPWD);
 		
-		parenthomePage.clickTeacherTab(webdriver,driver);
-		parenthomePage.clickAllTeacherSubTab(webdriver,driver);
+		commonPage.clickRequiredTab(webdriver,TabNames.TEACHERTAB);
+		commonPage.clickRequiredSubTab(webdriver,SubTabNames.AllTeacherTab);
 		
 		allTeacherPage.entryDropdown();
 				

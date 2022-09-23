@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.tyss.providenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.SubTabNames;
+import org.tyss.providenceSMS.genericUtility.TabNames;
 
 public class AddStudentTest extends BaseClass{
 	@Test
@@ -17,8 +19,8 @@ public class AddStudentTest extends BaseClass{
 		String adminLogin = property.getDataFromPropertyFile("Admin_UN");
 		String adminPassword = property.getDataFromPropertyFile("Admin_PWD");
 		commonPage.loginAction(adminLogin, adminPassword);
-		adminhomePage.clickStudentTab(webdriver, driver);
-		adminhomePage.clickAddStudentSubTab(webdriver, driver);
+		commonPage.clickRequiredTab(webdriver, TabNames.STUDENTTAB);
+		commonPage.clickRequiredSubTab(webdriver, SubTabNames.AddStudentTab);
 		Map<String,String> map = addStudent.addNewStudent(webdriver, excel);
 
 		addStudent.selectGradeFromDropdown(webdriver, excel);

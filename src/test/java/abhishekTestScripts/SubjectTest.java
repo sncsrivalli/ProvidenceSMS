@@ -7,7 +7,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import org.tyss.ProvidenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.BaseClass;
+import org.tyss.providenceSMS.genericUtility.TabNames;
+
 
 public class SubjectTest extends BaseClass {
 @Test
@@ -19,19 +21,8 @@ public class SubjectTest extends BaseClass {
 		// Scripts
 		commonPage.loginAction(adminUN, adminPWD);
 
-		// Login Validation through welcome message
-		String message = webdriver.loginValidation();
-		// webdriver.verifyWebPage(message,"Welcome back!");
-		
-		// Assert.assertEquals(message, "Welcome back!");
-		if (message.equals("Welcome back!")) {
-			System.out.println("Login is sucessfull..");
-		} else {
-			System.out.println("Login is failure..");
-		}
-
 		// Click on SubjectTAB
-		adminHomePage.clickAdminTab2(webdriver, driver);
+		commonPage.clickRequiredTab(webdriver, TabNames.SUBJECTTAB);
 
 		// get Data From excel with Key
 		Map<String, String> map = subjectPage.addSubject(webdriver, excel);
@@ -77,7 +68,7 @@ public class SubjectTest extends BaseClass {
 		subjectPage.deleteSubjectAction();
 
 		// Signout Script
-		commonPage.signoutAction();
+		commonPage.signOutAction();
 
 	}
 }

@@ -7,14 +7,17 @@ import org.providenceSMS.objectRepository.AddSubjectRoutingPage;
 import org.providenceSMS.objectRepository.AddTeacherPage;
 import org.providenceSMS.objectRepository.AdminHomePage;
 import org.providenceSMS.objectRepository.AllTeacherPage;
+import org.providenceSMS.objectRepository.ClassroomPage;
 import org.providenceSMS.objectRepository.CommonPage;
 import org.providenceSMS.objectRepository.CreateEventPage;
 import org.providenceSMS.objectRepository.ExamTimetablePage;
+import org.providenceSMS.objectRepository.GradePage;
 import org.providenceSMS.objectRepository.MyPettyCashHistoryPage;
 import org.providenceSMS.objectRepository.MySonsExamTimetablePage;
 import org.providenceSMS.objectRepository.ParentHomePage;
 import org.providenceSMS.objectRepository.PettyCashHistoryPage;
 import org.providenceSMS.objectRepository.StudentPaymentInvoicePage;
+import org.providenceSMS.objectRepository.SubjectPage;
 import org.providenceSMS.objectRepository.SubjectsPopUp;
 import org.providenceSMS.objectRepository.TeacherHomePage;
 import org.testng.annotations.AfterClass;
@@ -45,7 +48,9 @@ public class BaseClass {
 	protected CreateEventPage createEvent;
 	public static WebDriver sdriver;
 	public static JavaUtility sjavaUtility;
-	
+	protected ClassroomPage classroomPage;
+	protected GradePage gradePage;
+	protected SubjectPage subjectPage;
 	@BeforeClass
 	public void classSetup() {
 		
@@ -87,6 +92,9 @@ public class BaseClass {
 		subjectTable = new SubjectsPopUp(driver);
 		invoicePopup = new StudentPaymentInvoicePage(driver);
 		createEvent = new CreateEventPage(driver);
+		classroomPage = new ClassroomPage(driver);
+		gradePage = new GradePage(driver);
+		subjectPage = new SubjectPage(driver);
 	}
 	
 	@AfterClass

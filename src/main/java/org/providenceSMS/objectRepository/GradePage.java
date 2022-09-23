@@ -1,4 +1,4 @@
-package abhiPOMpages;
+package org.providenceSMS.objectRepository;
 
 import java.util.List;
 import java.util.Map;
@@ -7,10 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.tyss.ProvidenceSMS.genericUtility.ExcelUtility;
-import org.tyss.ProvidenceSMS.genericUtility.JavaScriptUtility;
-import org.tyss.ProvidenceSMS.genericUtility.JavaUtility;
-import org.tyss.ProvidenceSMS.genericUtility.WebDriverUtility;
+import org.tyss.providenceSMS.genericUtility.ExcelUtility;
+import org.tyss.providenceSMS.genericUtility.JavaUtility;
+import org.tyss.providenceSMS.genericUtility.WebDriverUtility;
 
 public class GradePage {
 
