@@ -5,7 +5,6 @@ import org.providenceSMS.objectRepository.AddExamTimetablePage;
 import org.providenceSMS.objectRepository.AddStudentPage;
 import org.providenceSMS.objectRepository.AddSubjectRoutingPage;
 import org.providenceSMS.objectRepository.AddTeacherPage;
-import org.providenceSMS.objectRepository.AdminHomePage;
 import org.providenceSMS.objectRepository.AllTeacherPage;
 import org.providenceSMS.objectRepository.ClassroomPage;
 import org.providenceSMS.objectRepository.CommonPage;
@@ -19,7 +18,6 @@ import org.providenceSMS.objectRepository.PettyCashHistoryPage;
 import org.providenceSMS.objectRepository.StudentPaymentInvoicePage;
 import org.providenceSMS.objectRepository.SubjectPage;
 import org.providenceSMS.objectRepository.SubjectsPopUp;
-import org.providenceSMS.objectRepository.TeacherHomePage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -31,11 +29,9 @@ public class BaseClass {
 	protected JavaUtility javaUtility;
 	public ExcelUtility excel;
 	protected CommonPage commonPage;
-	protected AdminHomePage adminhomePage;
 	protected AddTeacherPage addTeacherAction;
 	protected ParentHomePage parenthomePage;
 	protected AllTeacherPage allTeacherPage;
-	protected TeacherHomePage teacherhomePage;
 	protected AddExamTimetablePage  addExam ;
 	protected ExamTimetablePage examTimetable;
 	protected AddSubjectRoutingPage addSubjectRoutingPage;
@@ -51,6 +47,7 @@ public class BaseClass {
 	protected ClassroomPage classroomPage;
 	protected GradePage gradePage;
 	protected SubjectPage subjectPage;
+	
 	@BeforeClass
 	public void classSetup() {
 		
@@ -77,7 +74,7 @@ public class BaseClass {
 
 	@BeforeMethod
 	public void methodSetup() {
-		adminhomePage = new AdminHomePage(driver);
+		
 		addTeacherAction = new AddTeacherPage(driver);
 		parenthomePage = new ParentHomePage(driver);
 		allTeacherPage =new AllTeacherPage(driver);
@@ -85,7 +82,6 @@ public class BaseClass {
 		addSubjectRoutingPage = new AddSubjectRoutingPage(driver);
 		examTimetable = new ExamTimetablePage(driver);
 		mySonsExamTimetable = new MySonsExamTimetablePage(driver);
-		teacherhomePage = new TeacherHomePage(driver);
 		myPettyCash = new MyPettyCashHistoryPage(driver);
 		pettyCash = new PettyCashHistoryPage(driver);
 		addStudent = new AddStudentPage(driver);
