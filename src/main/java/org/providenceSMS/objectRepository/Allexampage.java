@@ -1,4 +1,4 @@
-package org.tyss.providenceSMS.objectRepository.pavani;
+package org.providenceSMS.objectRepository;
 
 import java.util.List;
 

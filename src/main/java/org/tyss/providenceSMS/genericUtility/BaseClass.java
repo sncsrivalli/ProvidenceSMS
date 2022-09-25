@@ -6,6 +6,7 @@ import org.providenceSMS.objectRepository.AddStudentPage;
 import org.providenceSMS.objectRepository.AddSubjectRoutingPage;
 import org.providenceSMS.objectRepository.AddTeacherPage;
 import org.providenceSMS.objectRepository.AllTeacherPage;
+import org.providenceSMS.objectRepository.Allexampage;
 import org.providenceSMS.objectRepository.ClassroomPage;
 import org.providenceSMS.objectRepository.CommonPage;
 import org.providenceSMS.objectRepository.CreateEventPage;
@@ -47,6 +48,7 @@ public class BaseClass {
 	protected ClassroomPage classroomPage;
 	protected GradePage gradePage;
 	protected SubjectPage subjectPage;
+	protected Allexampage allExamPage;
 	
 	@BeforeClass
 	public void classSetup() {
@@ -91,6 +93,7 @@ public class BaseClass {
 		classroomPage = new ClassroomPage(driver);
 		gradePage = new GradePage(driver);
 		subjectPage = new SubjectPage(driver);
+		allExamPage = new Allexampage(driver);
 	}
 	
 	@AfterClass
