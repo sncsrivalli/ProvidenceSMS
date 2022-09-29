@@ -1,4 +1,4 @@
-package org.tyss.providenceSMS.genericUtility;
+ package org.tyss.providenceSMS.genericUtility;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;

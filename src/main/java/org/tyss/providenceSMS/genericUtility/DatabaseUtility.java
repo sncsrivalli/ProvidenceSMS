@@ -26,11 +26,13 @@ public class DatabaseUtility {
 	 * @param dbPassword
 	 * @throws SQLException
 	 */
-	public void openDatabaseConnection(String dburl,String dbName,String dbPassword) throws SQLException {
+	public void openDatabaseConnection(String dburl,String dbName,String dbPassword) throws SQLException{
 		
 		Driver dbdriver = new Driver();
-		DriverManager.registerDriver(dbdriver);
-		connection = DriverManager.getConnection(dburl,dbName,dbPassword);
+		
+			DriverManager.registerDriver(dbdriver);
+			connection = DriverManager.getConnection(dburl,dbName,dbPassword);
+		
 	}
 	
 	/**
